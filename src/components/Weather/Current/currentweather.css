@@ -23,7 +23,7 @@
 
 .city {
   font-weight: 600;
-  font-size: 32px;
+  font-size: 25px;
   line-height: 1;
   margin: 0;
   letter-spacing: 1px;
@@ -31,7 +31,7 @@
 
 .weather-description {
   font-weight: 400;
-  font-size: 24px;
+  font-size: 23px;
   line-height: 1;
   margin: 0;
 }
@@ -79,4 +79,14 @@
     .current-weather-container{
         width:auto;
     }
+    .city{
+        font-size:20px;
+    }
+    .details,.weather-description{
+        font-size:18px;
+    }
+    .temperature{
+        font-size:100px;
+    }
+
 }

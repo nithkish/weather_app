@@ -30,3 +30,9 @@ header h1 {
   font-weight: normal;
   color: #f41d1d ;
 }
+
+@media screen and (max-width: 500px) {
+  header h1{
+    font-size:30px;
+  }
+}
