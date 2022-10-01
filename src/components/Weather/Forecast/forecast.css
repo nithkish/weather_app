@@ -1,0 +1,19 @@
+.title {
+    font-size: 23px;
+    font-weight: 700;
+    margin:10px 0;
+  }
+
+  .forecast-container{
+    display:flex;
+    flex-direction: column;
+    flex:2;
+    margin-left:20px;
+  }
+
+  @media screen and (max-width: 991px) {
+    .forecast-container{
+        margin-top:10px;
+        margin-left:0
+    }
+  }
