@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import { getCities } from "../../api/citySearchService";
-import { debounce } from "lodash";
 
 const Search = ({ search, setSearch }) => {
   const [error, setError] = useState(null);
   
-  const debouncedHandleChange = debounce((searchData) => {
+  const onChange = (searchData) => {
     setSearch(searchData);
-  }, 1000);
+  };
 
   const loadOptions = (inputValue) => {
     return (
@@ -27,7 +26,7 @@ const Search = ({ search, setSearch }) => {
           };
         })
         .catch(() => {
-          setError("❌ Search service not available!");
+          setError("❌ Search Service Unavailable.Try again!");
         })
     );
   };
@@ -39,8 +38,9 @@ const Search = ({ search, setSearch }) => {
         placeholder="Search for City"
         debounceTimeout={600}
         value={search}
-        onChange={debouncedHandleChange}
+        onChange={onChange}
         loadOptions={loadOptions}
+        onClick={()=>setSearch(null)}
       />
     </>
   );

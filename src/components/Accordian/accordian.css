@@ -75,3 +75,10 @@
 .daily-details-grid-item label:last-child {
   color: #212121;
 }
+
+@media screen and (max-width: 450px) {
+.daily-details-grid{
+ display:flex;
+ flex-direction: column;
+}
+}
