@@ -8,11 +8,11 @@
 }
 
 .accordian-box .panel {
-    margin-top: 14px;
-    font-size: 18px;
-    color: #707070;
-    margin-bottom: 6px;
-  }
+  margin-top: 14px;
+  font-size: 18px;
+  color: #707070;
+  margin-bottom: 6px;
+}
 
 .daily-item {
   background-color: #f5f5f5;
@@ -76,9 +76,12 @@
   color: #212121;
 }
 
-@media screen and (max-width: 450px) {
-.daily-details-grid{
- display:flex;
- flex-direction: column;
-}
+@media screen and (max-width: 500px) {
+  .daily-details-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .accordian-box{
+    width:100%;
+  }
 }

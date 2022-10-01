@@ -1,12 +1,17 @@
-.weather-container{
-    display: flex;
-    justify-content: space-between;
-    margin: 15px 30px;
+.weather-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 30px;
 }
 
 @media screen and (max-width: 991px) {
-    .weather-container{
-        display: flex;
-        flex-direction: column;
-    }
+  .weather-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 500px) {
+  .weather-container {
+    margin: 15px 10px;
+  }
 }
