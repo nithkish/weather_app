@@ -1,7 +1,8 @@
 .current-weather-container {
   width: 420px;
+  height: fit-content;
   border-radius: 6px;
-  box-shadow: 15px -5px 20px 2px hsl(0deg 0% 20%);
+  box-shadow: -12px 18px 20px 1px hsl(0deg 0% 20%);
   color: #fff;
   background-color: #707070;
   padding: 0 20px 20px 20px;
@@ -74,7 +75,7 @@
 }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
     .current-weather-container{
         width:auto;
     }

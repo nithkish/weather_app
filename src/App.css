@@ -18,3 +18,15 @@ header h1 {
   font-size: 54px;
   font-weight: bolder;
 }
+
+.error-box {
+  border: 1px solid #f41d1d;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px 36px;
+  position: relative;
+  margin: 15px 0;
+  font-size: 15px;
+  font-weight: normal;
+  color: #f41d1d ;
+}

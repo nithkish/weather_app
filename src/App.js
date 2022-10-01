@@ -12,7 +12,7 @@ function App() {
         <h1>Weather Forecast</h1>
       </header>
       <Search search={search} setSearch={setSearch} />
-      <Weather search={search} setSearch={setSearch} />
+      <Weather search={search} />
     </div>
   );
 }

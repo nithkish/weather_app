@@ -1,9 +1,10 @@
 .accordian-box {
-  background: #f5f5f5;
+  background: #d5d4d4;
   border: 1px solid #c5c5c5;
   border-radius: 20px;
   position: relative;
   margin-bottom: 18px;
+  box-shadow: -12px 18px 20px 1px #707070;
 }
 
 .accordian-box .panel {
