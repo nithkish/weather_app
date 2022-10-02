@@ -28,13 +28,16 @@ const Weather = ({ search}) => {
         const weatherResponse = await response[0].json();
         const forcastResponse = await response[1].json();
 
-        setCurrentWeather({city:search?search.label:null,...weatherResponse});
+        const label =weatherResponse.name+","+weatherResponse.sys.country;
+        
+        setCurrentWeather({city:search?.label??label,...weatherResponse});
         setForecast(forcastResponse);
         setLoading(false);
       })
       .catch(() => {
         setCurrentWeather(null);
         setForecast(null);
+        setLoading(false);
         setError("❌ Weather Service not available!")
       });
   };
@@ -42,7 +45,6 @@ const Weather = ({ search}) => {
   const getCurrentLocation = () => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        console.log(position)
         setPosition(position.coords);
       },
       () => {
