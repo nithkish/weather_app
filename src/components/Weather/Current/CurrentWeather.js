@@ -1,4 +1,11 @@
+import React from "react";
 import "./currentweather.css";
+
+/**
+ * Functional react component for the weather card to display the current weather
+ * @param {object} data - to pass the data from the response
+ * @return {*} JSX
+ */
 
 const CurrentWeather = ({data}) => {
   return (

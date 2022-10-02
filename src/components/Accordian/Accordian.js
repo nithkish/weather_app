@@ -4,10 +4,11 @@ import { WEEK_DAYS } from "../../constants/util/week";
 import "./accordian.css"
 
 /**
- * Re-usable Functional react component for AccordianItem
- * @description used to display the created question and answers along with respective edit and delete buttons
+ * Functional react component for Accordian
+ * @description used to display the forecast details of the selected city
  * answer is dispalyed on click of the question
- * @param {*} { id, question, answer }
+ * @param {object} - item : the object from the response array
+ * @param {number} -index : index of the array
  * @return {*} JSX
  */
 
@@ -22,6 +23,7 @@ function Accordian({ item, index }) {
         <div
           className="accordian-header"
           onClick={() => setCollapse(!collapse)}
+          data-testid="head"
         >
           <div className="daily-item">
             <img

@@ -3,6 +3,12 @@ import Search from "./components/Search/Search";
 import "./App.css";
 import Weather from "./components/Weather/Weather";
 
+/**
+ * Functional react parent component for Weather App
+ * @description to display the complete application with all the functionlity
+ * @return {*} JSX
+ */
+
 function App() {
   const [search, setSearch] = useState(null);
 
