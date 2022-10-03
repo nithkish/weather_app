@@ -1,13 +1,24 @@
 import React from "react";
-import { render, screen, waitFor, act } from "@testing-library/react";
+import { render, screen, waitFor, act, fireEvent } from "@testing-library/react";
 import Weather from "./Weather";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 import { WEATHER_API_URL, WEATHER_API_KEY } from "../../constants/api/weather";
+import {WEEK_DAYS} from "../../constants/util/week"
 
 const testSearch = {
   value: "18.519574 73.855287",
   label: "Pune,IN",
+};
+
+const testSearchNullLabel = {
+    value: "18.519574 73.855287",
+    label: null,
+  };
+
+const testSearch1 = {
+  value: "18.519574 73.855287",
+  label: "Pune123,IN",
 };
 
 const testWeather = {
@@ -15,7 +26,7 @@ const testWeather = {
   weather: [{ id: 800, main: "Clear", description: "clear sky", icon: "01n" }],
   base: "stations",
   main: {
-    temp: 21.6,
+    temp: 31.6,
     feels_like: 22.22,
     temp_min: 21.6,
     temp_max: 21.6,
@@ -31,7 +42,7 @@ const testWeather = {
   sys: { country: "IN", sunrise: 1664758499, sunset: 1664801498 },
   timezone: 19800,
   id: 7357900,
-  name: "Pune",
+  name: "Pune-api",
   cod: 200,
 };
 
@@ -440,13 +451,6 @@ describe("Weather", () => {
   let mock;
   beforeAll(() => {
     mock = new MockAdapter(axios);
-  });
-
-  afterEach(() => {
-    mock.reset();
-  });
-
-  it("renders without crashing and shows the labels correct/ly", async () => {
     mock
       .onGet(
         `${WEATHER_API_URL}/weather?lat=18.519574&lon=73.855287&appid=${WEATHER_API_KEY}&units=metric`
@@ -456,8 +460,55 @@ describe("Weather", () => {
         `${WEATHER_API_URL}/forecast?lat=18.519574&lon=73.855287&appid=${WEATHER_API_KEY}&units=metric`
       )
       .reply(200, testForecast);
-    await act( async () => render((<Weather search={testSearch} />)));
+  });
+  it("renders without crashing and shows the labels correct/ly", async () => {
+    await act(async () => render(<Weather search={testSearch} />));
     const label = screen.getByText("Pune,IN");
     await waitFor(() => expect(label).toBeInTheDocument());
+    const desc = screen.getByText("clear sky");
+    await waitFor(() => expect(desc).toBeInTheDocument());
+    const temp = screen.getByText("32°C");
+    await waitFor(() => expect(temp).toBeInTheDocument());
+  });
+
+  it("changing the test input renders the location correctly", async () => {
+    await act(async () => render(<Weather search={testSearch1} />));
+    const label = screen.getByText("Pune123,IN");
+    await waitFor(() => expect(label).toBeInTheDocument());
+  });
+
+  it("only 7 day forecast are displayed ", async () => {
+    const { container } = await act(async () =>
+      render(<Weather search={testSearch} />)
+    );
+    const forecast = container.getElementsByClassName("forecast-container");
+    expect(forecast[0].children.length).toBe(7);
+  });
+
+  it("Null search label shows city name from response ", async () => {
+    await act(async () =>
+      render(<Weather search={testSearchNullLabel} />)
+    );
+    const label = await waitFor(()=>screen.getByText("Pune-api,IN"));
+    await waitFor(() => expect(label).toBeInTheDocument());
+  });
+  it("forecast day start from next day from current date ", async () => {
+    const {container} = await act(async () =>
+      render(<Weather search={testSearch} />)
+    );
+    const day = WEEK_DAYS[(new Date().getDay())]
+    const days = container.getElementsByClassName("day");
+    expect(days[0].innerHTML).toBe(day);
+  });
+  it("clicking on forecast tab opens the accordian and validate the value from api", async () => {
+    const {container} = await act(async () =>
+      render(<Weather search={testSearch} />)
+    );
+    const grid_item =container.getElementsByClassName("daily-details-grid-item");
+    expect(grid_item.length).toBe(0);
+    fireEvent.click(screen.getAllByTestId("head")[0]);
+    expect(grid_item.length).toBe(6);
+    expect(grid_item[0].children[0]).toHaveTextContent("Pressure:");
+    expect(grid_item[0].children[1]).toHaveTextContent("1011");
   });
 });

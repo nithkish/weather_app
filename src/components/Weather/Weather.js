@@ -82,6 +82,7 @@ const Weather = ({search}) => {
     * onSearchChange method if there is a search word else triggers the currentlocation
   */
   useEffect(() => {
+    console.log("abc");
     setError(null);
     setLoading(true);
     if (search) onSearchChange();

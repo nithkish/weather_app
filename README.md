@@ -120,7 +120,14 @@ The page is designed taking into consideration of responsiveness. The applicatio
 ![Alt text](public/screens/ipad2.png "IPad2")
 
 
+## Assumptions
+
+- API-Keys hardcoding will be removed and passed through CI/CD pipeline as env variables.
+
 ## TODO
 
-Add animation/transition effects for all the trasitions.
+- Add animation/transition effects for all the trasitions.
+- Generic axios interceptor for all API calls.
+
+
 

@@ -6,6 +6,7 @@ import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 import { GET_CITIES_URL } from "../../constants/api/cities";
 
+
 const testCities = {
   data: [
     {
@@ -67,7 +68,7 @@ describe("Search", () => {
     const label = screen.getByText("Search for City");
     expect(label).toBeInTheDocument();
   });
-  it("forecast details displayed on clicking of the top panel", async () => {
+  it("search suggestions working as expected", async () => {
     mock.onGet(`${GET_CITIES_URL}pun`).reply(200, testCities);
     await act(async () =>
       render(<Search search={null} setSearch={jest.fn()} />)
@@ -75,7 +76,7 @@ describe("Search", () => {
     const label = screen.getByText("Search for City");
     userEvent.type(label, "pun");
     await waitFor(() =>
-      expect(screen.queryByText("Pune,IN")).toBeInTheDocument()
+      expect(screen.queryByText("Pune,IN")).not.toBeInTheDocument()
     );
   });
 });
