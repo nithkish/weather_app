@@ -123,6 +123,7 @@ The page is designed taking into consideration of responsiveness. The applicatio
 ## Assumptions
 
 - API-Keys hardcoding will be removed and passed through CI/CD pipeline as env variables.
+- State management tool (redux) not used as there are very few components. Needs to be implemented in case of bigger application.
 
 ## TODO
 
