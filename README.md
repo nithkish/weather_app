@@ -15,6 +15,7 @@ The colour palette used is Grey.
 - [Project Structure](#project-structure)
 - [Available Scripts](#available-scripts)
 - [Functionality](#functionality)
+- [Assumptions](#assumptions)
 - [Todo](#todo)
 
 ## Technologies used
