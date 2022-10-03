@@ -1,6 +1,6 @@
 # Simple Implementation of Weather Forecast App
 
-Responsive single page application oriented to display current Weather and 7 day Forecast of different cities with population more than 10000.On page load if Geolocation is supported, it displays the weather and forecast of the current location.
+Responsive single page application oriented to display current Weather and 7 day Forecast of different cities with population more than 10000.On landing if Geolocation is supported, it displays the weather and forecast of the current location.
 
 Application is deployed to the URL [WeatherApp](weather-app-nithkish.vercel.app)
 
@@ -89,7 +89,7 @@ App is ready to be deployed!
 
   ![Alt text](public/screens/landing_page.png "Landing Page")
 
- If the Geolocation Api is not available in your browser, the below error message appears on loading.
+ If the Geolocation Api is not available in the browser, the below error message appears on loading.
 
    ![Alt text](public/screens/error.png "Accordian")
 
