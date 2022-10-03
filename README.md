@@ -2,7 +2,7 @@
 
 Responsive single page application oriented to display current Weather and 7 day Forecast of different cities with population more than 10000.On landing if Geolocation is supported, it displays the weather and forecast of the current location.
 
-Application is deployed to the URL [WeatherApp](weather-app-nithkish.vercel.app)
+Application is deployed to the URL weather-app-nithkish.vercel.app
 
 The colour palette used is Grey.
 ![Alt text](public/screens/pallete.png "Pallete")
