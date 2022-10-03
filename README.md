@@ -5,7 +5,7 @@ Responsive single page application oriented to display current Weather and 7 day
 Application is deployed to the URL [WeatherApp](weather-app-nithkish.vercel.app)
 
 The colour palette used is Grey.
-![Alt text](public/assets/screens/pallete.png "Pallete")
+![Alt text](public/screens/pallete.png "Pallete")
 
 ## Table of Contents
 
@@ -51,7 +51,7 @@ The project mainly consists of two folders
 
 Other root files like App.js, index.js are kept inside the src folder.
 
-![Alt text](public/assets/screens/folder.png "Folder Structure")
+![Alt text](public/screens/folder.png "Folder Structure")
 
 ## Available Scripts
 
@@ -86,18 +86,18 @@ App is ready to be deployed!
 
  The search bar below the header can be used to search for any cities having population above 10000. On selecting a particular city, the weather and forecast of the selected city is displayed.
 
-  ![Alt text](public/assets/screens/landing_page.png "Landing Page")
+  ![Alt text](public/screens/landing_page.png "Landing Page")
 
  If the Geolocation Api is not available in your browser, the below error message appears on loading.
 
-   ![Alt text](public/assets/screens/error.png "Accordian")
+   ![Alt text](public/screens/error.png "Accordian")
 
 The main functional component of the application consists of below sections.
 
 - Header : "Weather Forecast" header card.
 - Search card : search with auto suggestions. Using the react-select-async-paginate package, the search bar with auto suggestion has been implemented.The cities in autosuggestion can only be selected for getting the weather and forecast.
 
-  ![Alt text](public/assets/screens/search.png "Search")
+  ![Alt text](public/screens/search.png "Search")
 
 - Weather Card : Displays the current Temperature of the selected/current city with the city name adn country code mentioned along with icon indicator of the weather and description. The bottom part of the card shows the details like pressure, wind speed, min/max temp, humidity etc.
 
@@ -105,19 +105,19 @@ The main functional component of the application consists of below sections.
 
 On clicking the top panel, the accordian bottom panel appears which has more details about the forecast as shown below.
   
-  ![Alt text](public/assets/screens/accordian.png "Accordian")
+  ![Alt text](public/screens/accordian.png "Accordian")
 
 The page is designed taking into consideration of responsiveness. The application is compatible both in mobile as well as tab screens.
 
 ### Mobile Screen
 
-![Alt text](public/assets/screens/iphone.png "Mobile")
+![Alt text](public/screens/iphone.png "Mobile")
 
 ### IPad Screen
 
-![Alt text](public/assets/screens/ipad1.png "IPad1")
+![Alt text](public/screens/ipad1.png "IPad1")
 
-![Alt text](public/assets/screens/ipad2.png "IPad2")
+![Alt text](public/screens/ipad2.png "IPad2")
 
 
 ## TODO
